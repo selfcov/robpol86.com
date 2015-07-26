@@ -4,13 +4,12 @@ python:
   - 3.4
 
 before_install:
-  - touch ssh_key && chmod 600 ssh_key
-  - openssl aes-256-cbc -K $encrypted_fd059ec139f0_key -iv $encrypted_fd059ec139f0_iv -in ssh_key.enc -out ssh_key -d
-  - ls -lah ssh_key
+  - touch .ssh_key && chmod 600 .ssh_key
+  - openssl aes-256-cbc -K $encrypted_fd059ec139f0_key -iv $encrypted_fd059ec139f0_iv -in ssh_key.enc -out .ssh_key -d
   - eval $(ssh-agent -s)
-  - ssh-add ssh_key
-  - git config user.name "$(git --no-pager show -s --format='%an' $TRAVIS_COMMIT)"
-  - git config user.email "$(git --no-pager show -s --format='%ae' $TRAVIS_COMMIT)"
+  - ssh-add .ssh_key
+  - git config --global user.name "$(git --no-pager show -s --format='%an' $TRAVIS_COMMIT)"
+  - git config --global user.email "$(git --no-pager show -s --format='%ae' $TRAVIS_COMMIT)"
 
 install:
   - mkdir -p docs/_build/html
