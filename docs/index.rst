@@ -12,10 +12,3 @@ Contents
 
    imagecfg
    photo_albums
-
-Indices
-=======
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
