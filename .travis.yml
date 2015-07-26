@@ -3,6 +3,10 @@ language: python
 python:
   - 3.4
 
+env:
+  global:
+    secure: KTcDbHu5Xav4GR7LsodTLNraP1ZIPhHmA+lMLbUvkSdL4COOZYZmCdISPpX2L1XLi1Y8d688FI+GdCKU9y7AzdUHNvlXFvr7bbGWlJs885OfJrOv/Ppt7F9FeccbD1r+nUqoGFyhM+cHVrfKUGvFpNlgGzrarAdgFM8NIzgzhRpaOHQlBNQz3GIQP4GFcsRM8bTBPAuZIzIfNjNnrbHn5z+77sBzKx++H2bIeqAR9pUpzmrt7Tw3PojvR9J7dgfPpW+XDz2Ux5eIJUMVGwW5b1S1UDnTP3yOuq7j3Ns8+fmm3Mk7aDkrTkECJM+cvAewD90iK+iMizDF4dEFnzKPqxu5sehDGCshLAyPY8wOWwff9nbot5xesspnoGBWoK9H+HKSEI5XpehqcvJx5gcDrXqa99dkfj6timZ5cZI4iHaVdkl1kVz1ZnJGcG8c400L8uNwUShdbBJjIJhaCaqADFg9F0MNM7IFtSSD5tu7/OWtR3XfmKalE61nBaaV7bQ2F4+4J/ybvUIRV3HI6sL3UMp1KXTfie3bN4oEYx+LNUWqrCMQF33ruGSe4k1eNK5t9oqWEtLoRUAiWthGYO/MawfOxuThAzb0F8sXYNqzxmV77mGK9A7FAWzda2eYidtk/OlV5SSnp+Laz51g2ZMTWENyfXGa9NoQU1treTxirhw=
+
 install:
   - git clone git@github.com:selfcov/selfcov.github.io.git docs/_build
   - pip install -r requirements.txt
