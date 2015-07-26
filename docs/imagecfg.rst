@@ -4,6 +4,12 @@
 ImageCFG
 ========
 
+.. note::
+
+    I've been hosting this file
+    `since before 2003 <https://web.archive.org/web/20031203173758fw_/http://www.robpol86.com/tutorials/imagecfg.php>`_.
+
+
 ImageCFG is a utility that probably does a lot of things (I cannot find any official documentation), but the only reason
 I use it is to fix old games (UT99 for example) which have problems on multicore/multicpu systems. It does so by
 assigning an executable to specific logical CPUs permanently (by modifying the .exe file, so backup the original in case

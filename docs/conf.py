@@ -10,6 +10,7 @@ sys.path.append(os.path.abspath('sphinx_ext'))
 author = 'Robpol86'
 extensions = ['imgur']
 master_doc = 'index'
+nitpicky = True
 project = 'Robpol86.com'
 release = '1.0'
 version = release
