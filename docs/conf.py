@@ -1,11 +1,16 @@
+import os
+import sys
 import time
 
 import sphinx_rtd_theme
+
+sys.path.append(os.path.abspath('sphinxext'))
 
 
 # General configuration.
 author = 'Robpol86'
 copyright = '{}, Robpol86'.format(time.strftime('%Y'))
+extensions = ['imgur']
 master_doc = 'index'
 project = 'Robpol86.com'
 release = '1.0'
