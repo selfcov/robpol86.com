@@ -9,9 +9,12 @@ before_install:
   - ls -lah ssh_key
   - eval $(ssh-agent -s)
   - ssh-add ssh_key
+  - git config user.name "$(git --no-pager show -s --format='%an' $TRAVIS_COMMIT)"
+  - git config user.email "$(git --no-pager show -s --format='%ae' $TRAVIS_COMMIT)"
 
 install:
-  - git clone git@github.com:selfcov/selfcov.github.io.git docs/_build
+  - mkdir docs/_build/html
+  - git clone git@github.com:selfcov/selfcov.github.io.git docs/_build/html
   - pip install -r requirements.txt
 
 script:
@@ -19,8 +22,8 @@ script:
   - make html
 
 after_success:
-  - cd _build
+  - cd _build/html
   - git status
   - git add .
-  - git commit
+  - "git commit -m \"AUTODEPLOY: $TRAVIS_REPO_SLUG @ $TRAVIS_COMMIT\""
   - git remote -v
