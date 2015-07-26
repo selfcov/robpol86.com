@@ -71,4 +71,4 @@ This is the important one. It sets the exe to use CPU0:
 Download
 ========
 
-You can download ImageCFG here: /static/binaries/Imagecfg.zip
+:download:`You can download ImageCFG from here. <Imagecfg.zip>`
