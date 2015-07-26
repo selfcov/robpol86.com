@@ -18,11 +18,10 @@ install:
 
 script:
   - cd docs
-  - make html
+  - sphinx-build -b html . _build/html
 
 after_success:
   - cd _build/html
-  - git status
-  - git add .
+  - git add -v .
   - "git commit -m \"AUTODEPLOY: $TRAVIS_REPO_SLUG @ $TRAVIS_COMMIT\""
-  - git remote -v
+  - git push origin master
