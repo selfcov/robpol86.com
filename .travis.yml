@@ -23,5 +23,5 @@ script:
 after_success:
   - cd _build/html
   - git add -v .
-  - "git commit -m \"AUTODEPLOY: $TRAVIS_REPO_SLUG @ $TRAVIS_COMMIT\""
+  - "git commit -m \"AUTODEPLOY: $TRAVIS_REPO_SLUG @ ${TRAVIS_COMMIT:10}\""
   - git push origin master
