@@ -4,7 +4,7 @@
 Photo Albums
 ============
 
-Test
+Test.
 
 Rack Cabinet
 ============
