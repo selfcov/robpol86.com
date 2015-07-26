@@ -4,10 +4,11 @@ python:
   - 3.4
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_fd059ec139f0_key -iv $encrypted_fd059ec139f0_iv -in deploy_key.enc -out deploy_key -d
-  - ls -lah deploy_key
-  - ssh-add deploy_key
-  - git config -l
+  - touch ssh_key && chmod 600 ssh_key
+  - openssl aes-256-cbc -K $encrypted_fd059ec139f0_key -iv $encrypted_fd059ec139f0_iv -in ssh_key.enc -out ssh_key -d
+  - ls -lah ssh_key
+  - eval $(ssh-agent -s)
+  - ssh-add ssh_key
 
 install:
   - git clone git@github.com:selfcov/selfcov.github.io.git docs/_build
