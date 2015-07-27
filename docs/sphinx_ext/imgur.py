@@ -13,11 +13,14 @@ class ImgurBlockQuote(nodes.Element):
     @staticmethod
     def visit(spht, node):
         imgur_id = node.attributes.pop('imgur_id')
-        html_attributes = {'CLASS': 'imgur-embed-pub', 'lang': 'en', 'data-id': 'a/{}'.format(imgur_id)}
-        spht.body.append(spht.starttag(node, 'blockquote', **html_attributes))
+        html_attributes_bq = {'CLASS': 'imgur-embed-pub', 'lang': 'en', 'data-id': 'a/{}'.format(imgur_id)}
+        spht.body.append(spht.starttag(node, 'blockquote', '', **html_attributes_bq))
+        html_attributes_ah = dict(href='https://imgur.com/a/{}'.format(imgur_id), CLASS='reference external')
+        spht.body.append(spht.starttag(node, 'a', 'Loading...', **html_attributes_ah))
 
     @staticmethod
     def depart(spht, _):
+        spht.body.append('</a>')
         spht.body.append('</blockquote>')
 
 
@@ -32,9 +35,8 @@ def imgur_role(name, rawtext, text, *_):
     #response = client.get_album(imgur_id) if album else client.get_image(imgur_id)
 
     if album:
-        node = ImgurBlockQuote()
+        node = ImgurBlockQuote(rawtext)
         node.attributes['imgur_id'] = imgur_id
-        # block.children.append(nodes.reference(rawtext, text, refuri='//imgur.com/a/{}'.format(imgur_id)))
         return [node], []
 
     url = 'http://imgur.com/{}'.format(imgur_id)
