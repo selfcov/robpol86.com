@@ -13,6 +13,7 @@ master_doc = 'index'
 nitpicky = True
 project = 'Robpol86.com'
 release = '1.0'
+templates_path = ['_templates']
 version = release
 
 

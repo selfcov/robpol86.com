@@ -3,6 +3,16 @@ language: python
 python:
   - 3.4
 
+env:
+  global:
+    secure: >
+      JECAepdVIwnzG63TsYtKzCiTcQmC0UfWbaLjbFUU4mQj3HAXJaYLAMN9Fj8pLy0RlVRDK9GMjmeK/DIs0yfWyYhrOZ5Jc37eZnluGalTVAnRVzL0Rq
+      ez6TkAWmKZ01APP2HTiF6ydYH6wYt+49YxVaC54KAd0SwYl4DYoRSgy+bN0hVTOE9TCeN5M809doshQdD4wW/7KFis0InecTToSAaB/ic27P40cnhs
+      VnMLo/6JWp7rWj4GZo3ZLiCQToYuwQ9QHzsmsqJ0/67puRpZaN1ZHIYnzZRRIEzOXwcxHaPghPSzl9bUT2TIHgXYlzQefsWpP0hnu1qI0ZMyI0u+px
+      sMt8XTBAKZjP5oX413cKwISLP3F2fTYiVJWUk5EbTv16Sjm70ImVmCNR18Fae+O4lCuTNhWk3f+Z2jxsNiLhT4E+k7nafakeC4zjSw4uUahKx1XQzx
+      7lDiCU80ykTTVMV9JEpbkg5MULRn5N+0nlemdLUdIDElYz/Qgqfk6fR+wspe1q5RZxIv2AEU6q5NFyBEgdWR60dp/VWs/Mvm7F8Z+A/ng9OrIrxfpX
+      qu0s78yk4WuS6MV/fyb0eTQVS1I7y/Utc7vWir8Da6NIVOSvWHCNVuBrtG2CmWwsgwUBkKQD1x1c5y/uedvkVMXGf1TZcmpg3jXlJVSn7bU9+RUB0=
+
 before_install:
   - touch .ssh_key && chmod 600 .ssh_key
   - openssl aes-256-cbc -K $encrypted_fd059ec139f0_key -iv $encrypted_fd059ec139f0_iv -in ssh_key.enc -out .ssh_key -d
