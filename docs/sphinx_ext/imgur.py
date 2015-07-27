@@ -1,4 +1,4 @@
-"""Custom Sphinx "roles" for inline Imgur images and embedded albums."""
+"""Custom Sphinx roles and nodes for inline Imgur images and embedded albums."""
 
 import re
 
@@ -12,7 +12,9 @@ class ImgurBlockQuote(nodes.Element):
 
     @staticmethod
     def visit(spht, node):
-        spht.body.append(spht.starttag(node, 'blockquote', CLASS='imgur-embed-pub', lang='en'))
+        imgur_id = node.attributes.pop('imgur_id')
+        html_attributes = {'CLASS': 'imgur-embed-pub', 'lang': 'en', 'data-id': 'a/{}'.format(imgur_id)}
+        spht.body.append(spht.starttag(node, 'blockquote', **html_attributes))
 
     @staticmethod
     def depart(spht, _):
@@ -31,8 +33,7 @@ def imgur_role(name, rawtext, text, *_):
 
     if album:
         node = ImgurBlockQuote()
-        # node.attributes['data-id'] = 'a/{}'.format(imgur_id)
-        # import pdb; pdb.set_trace()
+        node.attributes['imgur_id'] = imgur_id
         # block.children.append(nodes.reference(rawtext, text, refuri='//imgur.com/a/{}'.format(imgur_id)))
         return [node], []
 
