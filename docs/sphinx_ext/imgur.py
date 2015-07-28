@@ -19,11 +19,26 @@ class ImgurBlockQuoteNode(nodes.General, nodes.Element):
         self.is_album = is_album
         self.hide_post_details = hide_post_details
 
+    @staticmethod
+    def visit(spht, node):
+        id_ = ('a/{}' if node.is_album else '{}').format(node.imgur_id)
+        html_attributes_bq = {'CLASS': 'imgur-embed-pub', 'lang': spht.settings.language_code, 'data-id': id_}
+        if node.hide_post_details:
+            html_attributes_bq['data-context'] = 'false'
+        spht.body.append(spht.starttag(node, 'blockquote', '', **html_attributes_bq))
+        html_attributes_ah = dict(href='https://imgur.com/{}'.format(id_), CLASS='reference external')
+        spht.body.append(spht.starttag(node, 'a', 'Loading...', **html_attributes_ah))
+
+    @staticmethod
+    def depart(spht, _):
+        spht.body.append('</a>')
+        spht.body.append('</blockquote>')
+
 
 class ImgurBlockQuoteDirective(Directive):
     required_arguments = 1
     optional_arguments = 1
-    option_spec = dict(hide_post_details=bool)
+    option_spec = dict(hide_post_details=lambda i: i.lower() == 'true')
 
     def run(self):
         return [ImgurBlockQuoteNode(self.arguments[0], self.name == 'imgur-album', self.options['hide_post_details'])]
@@ -34,7 +49,9 @@ class EventHandlers(object):
     @classmethod
     def process_nodes(cls, app, doctree, fromdocname):
         for node in doctree.traverse(ImgurBlockQuoteNode):
-            node.replace_self([nodes.Text('{} {} {}'.format(node.imgur_id, node.is_album, node.hide_post_details))])
+            # TODO Iterate all albums first and query api. Cache.
+            # node.replace_self([nodes.Text('{} {} {}'.format(node.imgur_id, node.is_album, node.hide_post_details))])
+            pass
 
     @classmethod
     def purge_from_cache(cls, app, env, docname):
@@ -53,7 +70,7 @@ def setup(app):
     # app.add_config_value('imgur_auth_secret', None, False)
     app.add_config_value('imgur_album_hide_post_details', False, True)
     # app.add_config_value('imgur_image_hide_post_details', False, True)
-    app.add_node(ImgurBlockQuoteNode)
+    app.add_node(ImgurBlockQuoteNode, html=(ImgurBlockQuoteNode.visit, ImgurBlockQuoteNode.depart))
     # app.add_directive('imgur', ImgurBlockQuoteDirective)
     app.add_directive('imgur-album', ImgurBlockQuoteDirective)
     # app.add_role('imgur', imgur_role)
