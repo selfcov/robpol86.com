@@ -4,7 +4,7 @@
 Photo Albums
 ============
 
-:imgur:`6nOHJ5Z`
+Test
 
 Rack Cabinet
 ============
@@ -14,4 +14,5 @@ Test
 July 13th, 2015
 ---------------
 
-:imgur_album:`hWyW0`
+.. imgur-album:: hWyW0
+    :hide_post_details: False
