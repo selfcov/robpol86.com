@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath('sphinx_ext'))
 
 # General configuration.
 author = 'Robpol86'
-extensions = ['imgur']
+extensions = ['imgur', 'sphinxcontrib.disqus']
 master_doc = 'index'
 nitpicky = True
 project = 'Robpol86.com'
@@ -33,3 +33,6 @@ html_show_copyright = False
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_title = project
+
+# Options for extensions.
+disqus_shortname = 'rob86wiki'

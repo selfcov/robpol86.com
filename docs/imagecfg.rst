@@ -8,6 +8,7 @@ ImageCFG
 
     I've been hosting this file
     `since before 2003 <https://web.archive.org/web/20031203173758fw_/http://www.robpol86.com/tutorials/imagecfg.php>`_.
+    Too bad I don't have a copy of an older version of this page.
 
 
 ImageCFG is a utility that probably does a lot of things (I cannot find any official documentation), but the only reason
@@ -78,3 +79,9 @@ Download
 ========
 
 :download:`You can download ImageCFG from here. <Imagecfg.zip>`
+
+Comments
+========
+
+.. disqus::
+    :disqus_identifier: ImageCFG
