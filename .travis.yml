@@ -18,7 +18,7 @@ install:
 
 script:
   - cd docs
-  - sphinx-build -W -b html . _build/html
+  - sphinx-build . _build/html
 
 after_success:
   - cd _build/html
