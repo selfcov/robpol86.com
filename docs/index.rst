@@ -14,5 +14,6 @@ Contents
     rns_510_vim
     wireless_charging_car_dock
     atrix_lapdock
+    flash_droid_cricket
     vw_jsw_2010
     photo_albums
