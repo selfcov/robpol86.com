@@ -104,6 +104,78 @@ Using USB OTG and Miracast
 
 It works, but it's not really pleasant. If we can get Keyboard/Mouse to Bluetooth working that would be much better.
 
+With a Raspberry Pi
+===================
+
+The Lapdock works great with the Raspberry Pi, but with a few caveats:
+
+* Every time the Lapdock's lid is opened or closed, power is cut off the RPI for a second, causing it to reboot.
+* There is no "off" mode. When the lid is closed, power is cut off for a second, but then returned, so the RPI will
+  power back on.
+
+Adapters used:
+
+* `HDMI Male to Micro HDMI Female <https://www.dealextreme.com/p/hdmi-male-to-micro-hdmi-female-adapter-66079>`_
+* `Micro USB B Male to Female <https://www.ebay.com/itm/ws/eBayISAPI.dll?ViewItem&item=270928425953>`_
+
+.. note::
+
+    The Raspberry Pi only supports power from its micro USB port, and the regular USB ports on the RPI won't allow
+    enough power through. So I had to splice another USB cable into the micro USB extension and route the USB data
+    cables (green and white) to the spliced cable.
+
+.. image:: https://i.imgur.com/cZR03m.jpg
+    :target: https://imgur.com/cZR03
+    :width: 33%
+.. image:: https://i.imgur.com/MrTBNm.jpg
+    :target: https://imgur.com/MrTBN
+    :width: 33%
+.. image:: https://i.imgur.com/vCYfGm.jpg
+    :target: https://imgur.com/vCYfG
+    :width: 33%
+
+With a Laptop
+=============
+
+I can use the Atrix Lapdock as a secondary display for my laptop. At home my laptop is docked to two monitors, so every
+time I traveled I had to deal with a single monitor. Not anymore! Adapters used:
+
+* `HDMI Male to Micro HDMI Female <https://www.dealextreme.com/p/hdmi-male-to-micro-hdmi-female-adapter-66079>`_
+* HDMI Female/Female Coupler
+
+.. image:: https://i.imgur.com/ldQ0cl.jpg
+    :target: https://imgur.com/ldQ0c
+    :width: 49%
+.. image:: https://i.imgur.com/KONZZl.jpg
+    :target: https://imgur.com/KONZZ
+    :width: 49%
+
+With a Wii
+==========
+
+I don't have a 360 or PS3, but I have a Wii and after I found an HDMI adapter I tried it with the Lapdock. Turns out it
+works just fine. The Lapdock takes care of changing resolution as long as it's at or below 1366x768. Audio works too by
+the way. This should work just fine with the Xbox 360, PS3, or any other HDMI devices. Adapters used:
+
+* `HDMI Male to Micro HDMI Female <https://www.dealextreme.com/p/hdmi-male-to-micro-hdmi-female-adapter-66079>`_
+* HDMI Female/Female Coupler
+* `Wii HDMI Adapter <https://www.amazon.com/gp/product/B0057UNPQO/>`_
+
+.. image:: https://i.imgur.com/TXiVxm.jpg
+    :target: https://imgur.com/TXiVx
+    :width: 33%
+.. image:: https://i.imgur.com/UkdYJm.jpg
+    :target: https://imgur.com/UkdYJ
+    :width: 33%
+.. image:: https://i.imgur.com/cc5TKm.jpg
+    :target: https://imgur.com/cc5TK
+    :width: 33%
+
+Lapdock 500 Teardown
+====================
+
+.. imgur-embed:: a/UDZs7
+
 Comments
 ========
 
