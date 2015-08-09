@@ -84,4 +84,3 @@ Comments
 ========
 
 .. disqus::
-    :disqus_identifier: ImageCFG

@@ -8,7 +8,8 @@ Contents
 ========
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   imagecfg
-   photo_albums
+    imagecfg
+    rns_510_vim
+    photo_albums
