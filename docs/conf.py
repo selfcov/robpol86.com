@@ -1,14 +1,11 @@
 import os
-import sys
 
 import sphinx_rtd_theme
-
-sys.path.append(os.path.abspath('sphinx_ext'))
 
 
 # General configuration.
 author = 'Robpol86'
-extensions = ['imgur', 'sphinxcontrib.disqus']
+extensions = ['sphinxcontrib.disqus', 'sphinxcontrib.imgur']
 master_doc = 'index'
 nitpicky = True
 project = 'Robpol86.com'
@@ -34,5 +31,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_title = project
 
+
 # Options for extensions.
 disqus_shortname = 'rob86wiki'
+imgur_client_id = '13d3c73555f2190'
