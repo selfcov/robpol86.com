@@ -24,6 +24,7 @@ html_context = dict(
     source_suffix='.rst',
 )
 html_copy_source = False
+html_extra_path = ['.htaccess', 'robots.txt']
 html_favicon = 'favicon.ico'
 html_last_updated_fmt = '%B %d, %Y'
 html_show_copyright = False
