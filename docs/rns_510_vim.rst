@@ -87,3 +87,8 @@ References
 .. [3] http://www.golfmk6.com/forums/showthread.php?t=22712
 .. [4] http://forums.vwvortex.com/showthread.php?5395639-RNS-510-Video-In-Motion-via-firmware-change-5-min-job-and-free
 .. [5] http://myturbodiesel.com/forum/f9/how-unlock-rns510-vim-tv-free-free-video-motion-play-dvd-while-driving-9150/
+
+Comments
+========
+
+.. disqus::
