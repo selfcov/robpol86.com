@@ -13,5 +13,6 @@ Contents
     imagecfg
     rns_510_vim
     wireless_charging_car_dock
+    atrix_lapdock
     vw_jsw_2010
     photo_albums
